@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<claros-config>
+	<!-- COMMON PARAMETERS -->
+	<common-params>
+		<charset>utf-8</charset>
+		<!-- the timezone is not functional at 2.0 -->
+		<server-timezone>Europe/Istanbul</server-timezone>
+		<!-- this directory must be writable (e.g. run a chmod 777 on it) -->
+		<tmp-dir>/tmp</tmp-dir> 
+		<!-- th e following two is in MB's-->
+		<max-attachment-size>5</max-attachment-size>
+		<max-mail-size>10</max-mail-size>
+		<title>Claros inTouch 2.1</title>
+		<!-- We recommend running spamassasin. -->
+		<spam-check-enabled>false</spam-check-enabled>
+		<!-- valid values are: da, de, en, fr, it, pt_br, pl, sk, tr, vi, zh_cn_utf8 -->
+		<default-lang>en</default-lang>
+		<!-- this is the default rss feed. users can set their own -->
+		<rss-feed>http://rss.cnn.com/rss/cnn_topstories.rss</rss-feed>
+	</common-params>
+
+	<!-- CHAT SERVER SETUP -->
+	<!-- if you have a jabber server with transports running such as 
+		the MSN, yahoo, icq, aol transports the following transport 
+		domains must be set. If you don't have your own jabber server
+		or not running transports omit the following settings.
+	-->
+	<chat>
+		<default-domain>claros.org</default-domain>
+		<msn-transport>msn.claros.org</msn-transport>
+		<yahoo-transport>yahoo.claros.org</yahoo-transport>
+		<icq-transport>icq.claros.org</icq-transport>
+		<aol-transport>aol.claros.org</aol-transport>
+	</chat>
+
+	<!-- MAIL SERVER SETUP -->	
+	<servers>
+		<server>
+			<!-- give any name you desire -->
+			<shortname>localhost</shortname>
+			<!-- your imap/pop3 server ip/dns -->
+			<fetch-server>127.0.0.1</fetch-server>
+			<!-- port you are running the pop3/imap server -->
+			<fetch-server-port>110</fetch-server-port>
+			<!-- which protocol? valid values are imap or pop3 (case sensitive) -->
+			<fetch-protocol>pop3</fetch-protocol>
+			<!-- your smtp server's ip/dns -->
+			<smtp-server>127.0.0.1</smtp-server>
+			<!-- port you are running the smtp server -->
+			<smtp-server-port>25</smtp-server-port>
+			<!-- does your smtp server need authentication? -->
+			<smtp-authenticated>true</smtp-authenticated>
+			<!-- IMAP only: if you use courier or cyrus you'll need to set the following to "INBOX." (with the dot(.) but omit the quotes) -->
+			<folder-namespace></folder-namespace>
+		</server>
+	</servers>
+
+	<!-- THE DATABASE SETUP -->
+	<!-- 
+		Please note that DB setup is essential to work. There is a intouch-mysql file in the SQL directory
+		of the zip file. Please create a database and dump the sql file to the db. 
+		
+		mysqladmin -u root -p create intouch
+		mysql -u root -p intouch < intouch-mysql.sql
+	 -->
+	<db-config>
+		<db>
+			<!-- do not change the term file!!! -->
+			<id>file</id>
+			<!-- the connection url for the JDBC connection -->
+			<database>jdbc:mysql://localhost:3306/gomovie</database>
+			<!-- the connection class -->
+			<driver>com.mysql.jdbc.Driver</driver>
+			<!-- the user with read/write/delete/update/select permission to the database  -->
+			<login>root</login>
+			<!-- the plain text password -->
+			<password>root</password>
+		</db>
+	</db-config>
+</claros-config>
