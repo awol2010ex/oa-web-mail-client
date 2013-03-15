@@ -1047,3 +1047,357 @@ Log session start time Thu Mar 14 13:56:55 CST 2013<br>
 	at java.lang.Thread.run(Thread.java:619)
 </td>
 </tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Fri Mar 15 09:31:04 GMT+08:00 2013<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>368</td>
+<td title="localhost-startStop-1 thread">localhost-startStop-1</td>
+<td title="Level"><font color="#993300"><strong>FATAL</strong></font></td>
+<td title="org.claros.intouch.common.utility.Initiator category">org.claros.intouch.common.utility.Initiator</td>
+<td title="Message">Temp dir does not exist or is not a directory, please check the tmp-dir setting in the config.xml file</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Fri Mar 15 09:33:29 GMT+08:00 2013<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>524589</td>
+<td title="http-bio-8080-exec-7 thread">http-bio-8080-exec-7</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="org.claros.commons.exception.ClarosBaseException category">org.claros.commons.exception.ClarosBaseException</td>
+<td title="Message">An exception is created. System Message: org.claros.commons.mail.exception.ConnectionException
+	at org.claros.commons.auth.MailAuth.authenticate(MailAuth.java:28)
+	at org.claros.intouch.profiling.services.LoginService.doPost(LoginService.java:83)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.claros.intouch.common.filters.GZIPFilter.doFilter(GZIPFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1001)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+</td>
+</tr>
+
+<tr>
+<td>673891</td>
+<td title="http-bio-8080-exec-3 thread">http-bio-8080-exec-3</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="org.claros.commons.mail.protocols.Pop3ProtocolImpl category">org.claros.commons.mail.protocols.Pop3ProtocolImpl</td>
+<td title="Message">Could not delete message ids: [I@11d6176</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">javax.mail.MethodNotSupportedException: Expunge not supported
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.sun.mail.pop3.POP3Folder.expunge(POP3Folder.java:354)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.commons.mail.protocols.Pop3ProtocolImpl.deleteMessages(Pop3ProtocolImpl.java:113)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.webmail.controllers.DbMailControllerImpl.moveEmails(DbMailControllerImpl.java:379)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.webmail.services.DeleteMailService.doGet(DeleteMailService.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.webmail.services.DeleteMailService.doPost(DeleteMailService.java:116)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.common.filters.GZIPFilter.doFilter(GZIPFilter.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1001)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:619)
+</td></tr>
+
+<tr>
+<td>673910</td>
+<td title="http-bio-8080-exec-3 thread">http-bio-8080-exec-3</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="org.claros.commons.exception.ClarosBaseException category">org.claros.commons.exception.ClarosBaseException</td>
+<td title="Message">An exception is created. System Message: javax.mail.MethodNotSupportedException: Expunge not supported
+	at com.sun.mail.pop3.POP3Folder.expunge(POP3Folder.java:354)
+	at org.claros.commons.mail.protocols.Pop3ProtocolImpl.deleteMessages(Pop3ProtocolImpl.java:113)
+	at org.claros.intouch.webmail.controllers.DbMailControllerImpl.moveEmails(DbMailControllerImpl.java:379)
+	at org.claros.intouch.webmail.services.DeleteMailService.doGet(DeleteMailService.java:86)
+	at org.claros.intouch.webmail.services.DeleteMailService.doPost(DeleteMailService.java:116)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.claros.intouch.common.filters.GZIPFilter.doFilter(GZIPFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1001)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+</td>
+</tr>
+
+<tr>
+<td>674729</td>
+<td title="http-bio-8080-exec-6 thread">http-bio-8080-exec-6</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="org.claros.commons.mail.protocols.Pop3ProtocolImpl category">org.claros.commons.mail.protocols.Pop3ProtocolImpl</td>
+<td title="Message">Could not delete message ids: [I@1915330</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">javax.mail.MethodNotSupportedException: Expunge not supported
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.sun.mail.pop3.POP3Folder.expunge(POP3Folder.java:354)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.commons.mail.protocols.Pop3ProtocolImpl.deleteMessages(Pop3ProtocolImpl.java:113)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.webmail.controllers.DbMailControllerImpl.moveEmails(DbMailControllerImpl.java:379)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.webmail.services.DeleteMailService.doGet(DeleteMailService.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.webmail.services.DeleteMailService.doPost(DeleteMailService.java:116)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.common.filters.GZIPFilter.doFilter(GZIPFilter.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1001)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:619)
+</td></tr>
+
+<tr>
+<td>674730</td>
+<td title="http-bio-8080-exec-6 thread">http-bio-8080-exec-6</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="org.claros.commons.exception.ClarosBaseException category">org.claros.commons.exception.ClarosBaseException</td>
+<td title="Message">An exception is created. System Message: javax.mail.MethodNotSupportedException: Expunge not supported
+	at com.sun.mail.pop3.POP3Folder.expunge(POP3Folder.java:354)
+	at org.claros.commons.mail.protocols.Pop3ProtocolImpl.deleteMessages(Pop3ProtocolImpl.java:113)
+	at org.claros.intouch.webmail.controllers.DbMailControllerImpl.moveEmails(DbMailControllerImpl.java:379)
+	at org.claros.intouch.webmail.services.DeleteMailService.doGet(DeleteMailService.java:86)
+	at org.claros.intouch.webmail.services.DeleteMailService.doPost(DeleteMailService.java:116)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.claros.intouch.common.filters.GZIPFilter.doFilter(GZIPFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1001)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+</td>
+</tr>
+
+<tr>
+<td>975720</td>
+<td title="http-bio-8080-exec-9 thread">http-bio-8080-exec-9</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="org.claros.commons.mail.protocols.Pop3ProtocolImpl category">org.claros.commons.mail.protocols.Pop3ProtocolImpl</td>
+<td title="Message">Could not delete message ids: [I@155c5eb</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">javax.mail.MethodNotSupportedException: Expunge not supported
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.sun.mail.pop3.POP3Folder.expunge(POP3Folder.java:354)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.commons.mail.protocols.Pop3ProtocolImpl.deleteMessages(Pop3ProtocolImpl.java:113)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.webmail.controllers.DbMailControllerImpl.moveEmails(DbMailControllerImpl.java:379)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.webmail.services.DeleteMailService.doGet(DeleteMailService.java:86)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.webmail.services.DeleteMailService.doPost(DeleteMailService.java:116)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.claros.intouch.common.filters.GZIPFilter.doFilter(GZIPFilter.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1001)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:619)
+</td></tr>
+
+<tr>
+<td>975751</td>
+<td title="http-bio-8080-exec-9 thread">http-bio-8080-exec-9</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="org.claros.commons.exception.ClarosBaseException category">org.claros.commons.exception.ClarosBaseException</td>
+<td title="Message">An exception is created. System Message: javax.mail.MethodNotSupportedException: Expunge not supported
+	at com.sun.mail.pop3.POP3Folder.expunge(POP3Folder.java:354)
+	at org.claros.commons.mail.protocols.Pop3ProtocolImpl.deleteMessages(Pop3ProtocolImpl.java:113)
+	at org.claros.intouch.webmail.controllers.DbMailControllerImpl.moveEmails(DbMailControllerImpl.java:379)
+	at org.claros.intouch.webmail.services.DeleteMailService.doGet(DeleteMailService.java:86)
+	at org.claros.intouch.webmail.services.DeleteMailService.doPost(DeleteMailService.java:116)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.claros.intouch.common.filters.GZIPFilter.doFilter(GZIPFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1001)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Log4J Log Messages</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Fri Mar 15 10:25:46 GMT+08:00 2013<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>51075</td>
+<td title="http-bio-8080-exec-7 thread">http-bio-8080-exec-7</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="org.claros.commons.exception.ClarosBaseException category">org.claros.commons.exception.ClarosBaseException</td>
+<td title="Message">An exception is created. System Message: org.claros.commons.mail.exception.ConnectionException
+	at org.claros.commons.auth.MailAuth.authenticate(MailAuth.java:28)
+	at org.claros.intouch.profiling.services.LoginService.doPost(LoginService.java:83)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.claros.intouch.common.filters.GZIPFilter.doFilter(GZIPFilter.java:26)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1001)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+</td>
+</tr>

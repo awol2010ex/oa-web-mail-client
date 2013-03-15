@@ -110,7 +110,8 @@ public class Pop3ProtocolImpl implements Protocol {
 					msg.setFlag(Flags.Flag.DELETED, true);
 				}
 			}
-			fold.expunge();
+			//fold.expunge();
+			this.disconnect();
 			connect(Constants.CONNECTION_READ_WRITE);
 			return handler;
 		} catch (Exception e) {

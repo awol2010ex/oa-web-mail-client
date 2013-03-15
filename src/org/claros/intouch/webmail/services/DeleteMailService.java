@@ -79,7 +79,7 @@ public class DeleteMailService extends BaseService {
 
 					// action time
 					if (profile.getProtocol().equals(Constants.POP3)) {
-						if (fItem.getId().equals(folder)) {
+						if (fItem.getId().equals(Long.valueOf(folder))) {
 							// mailCont.deleteEmails(msgs);
 							mailCont.markAsDeleted(msgs);
 						} else {
