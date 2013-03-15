@@ -7,8 +7,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
-import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -34,22 +32,18 @@ import org.claros.commons.mail.models.ConnectionProfile;
 import org.claros.commons.mail.models.Email;
 import org.claros.commons.mail.models.EmailHeader;
 import org.claros.commons.mail.models.EmailPart;
-import org.claros.commons.mail.models.EmailPriority;
 import org.claros.commons.mail.protocols.Smtp;
 import org.claros.commons.mail.utility.Utility;
 import org.claros.commons.utility.MD5;
 import org.claros.intouch.common.services.BaseService;
-import org.claros.intouch.common.utility.Constants;
 import org.claros.intouch.contacts.controllers.ContactsController;
 import org.claros.intouch.preferences.controllers.UserPrefsController;
 import org.claros.intouch.webmail.controllers.FolderController;
 import org.claros.intouch.webmail.controllers.MailController;
 import org.claros.intouch.webmail.factory.FolderControllerFactory;
 import org.claros.intouch.webmail.factory.MailControllerFactory;
-import org.claros.intouch.webmail.models.MsgDbObject;
 import org.claros.intouch.webmail.models.FolderDbObject;
-
-import org.htmlcleaner.HtmlCleaner;
+import org.claros.intouch.webmail.models.MsgDbObject;
 
 public class SendMailService extends BaseService {
 
@@ -196,6 +190,7 @@ public class SendMailService extends BaseService {
 						
 					} catch (Exception e) {
 						e.printStackTrace();
+						log.error("", e);
 					}
 				}
 				parts.addAll(newLst);
@@ -228,6 +223,8 @@ public class SendMailService extends BaseService {
 			}
 		} catch (Exception e) {
 			out.print("fail");
+			log.error("", e);
+			
 		}
 	}
 

@@ -19,6 +19,8 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.claros.commons.auth.models.AuthProfile;
 import org.claros.commons.configuration.PropertyFile;
 import org.claros.commons.mail.models.ByteArrayDataSource;
@@ -36,7 +38,7 @@ import com.sun.mail.smtp.SMTPMessage;
  *
  */
 public class Smtp {
-
+	private static Log log = LogFactory.getLog(Smtp.class);
 	private Session session = null;
 
 	public Smtp(ConnectionProfile profile, AuthProfile auth) {
@@ -127,9 +129,9 @@ public class Smtp {
 				txtBody = Utility.replaceAllOccurances(txtBody, "<p>", "\n");
 				txtBody = Utility.replaceAllOccurances(txtBody, "</p>", "\n");
 				txtBody = Utility.replaceAllOccurances(txtBody, "&nbsp;", " ");
-				txtBody = Utility.replaceAllOccurances(txtBody, "&uuml;", "�");
+				txtBody = Utility.replaceAllOccurances(txtBody, "&uuml;", "�");
 				txtBody = Utility.replaceAllOccurances(txtBody, "&Uuml;", "Ü");
-				txtBody = Utility.replaceAllOccurances(txtBody, "&ccedil;", "�");
+				txtBody = Utility.replaceAllOccurances(txtBody, "&ccedil;", "�");
 				txtBody = Utility.replaceAllOccurances(txtBody, "&Ccedil;", "Ç");
 				txtBody = Utility.replaceAllOccurances(txtBody, "&ouml;", "ö");
 				txtBody = Utility.replaceAllOccurances(txtBody, "&Ouml;", "Ö");
@@ -203,6 +205,7 @@ public class Smtp {
 				Address[] sent = mimeMsg.getAllRecipients();
 				out.put("sent", sent);
 			} catch (SendFailedException se) {
+				log.error("", se);
 				Address[] sent = se.getValidSentAddresses();
 				Address[] invalid = se.getInvalidAddresses();
 				Address[] fail = se.getValidUnsentAddresses();
