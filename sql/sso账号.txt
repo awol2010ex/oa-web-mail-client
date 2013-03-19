@@ -1,0 +1,29 @@
+SELECT DISTINCT
+    p.positionid username ,
+    T.USER_PSWD  pwdHash,
+    u.unitname || p.positionname alias
+FROM
+    intf_saleoa.wf_duty d ,
+    intf_saleoa.wf_staff s ,
+    intf_saleoa.wf_unit u ,
+    intf_saleoa.wf_position p ,
+    intf_saleoa.ip_arc_user_auth iaua ,
+    casb.VW_CAS_USERS_DB_BASE_T T
+WHERE
+    d.remark='1'
+AND s.staffid=d.staffid
+AND s.delflag='n'
+AND s.status='1'
+AND p.positionid= d.positionid
+AND iaua.staff_id=s.staffid
+AND s.ownerunitid ||'.'||iaua.login_id =t.login_id
+AND s.ownerunitid  =u.unitid
+AND p.roleid IN ('CEO_ZJL',
+                 'SAL_JL',
+                 'SUP_JL',
+                 'MKT_JL',
+                 'CSV_JL',
+                 'JUC_JL',
+                 'FIN_JL',
+                 'PRT_JL',
+                 'MGT_JL')
