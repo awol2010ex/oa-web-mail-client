@@ -1,3 +1,4 @@
+--users_temp
 SELECT DISTINCT
     p.positionid username ,
     T.USER_PSWD  pwdHash,
@@ -27,3 +28,49 @@ AND p.roleid IN ('CEO_ZJL',
                  'FIN_JL',
                  'PRT_JL',
                  'MGT_JL')
+                 
+                 
+--users
+
+insert   into  users (username,
+    pwdHash,
+    pwdAlgorithm,
+    useForwarding,
+    useAlias)
+    
+    select     lower(  replace(username,'_',''))   ,max(pwdHash)  ,'MD5' ,0 ,0   from users_temp group by username ,alias;
+    
+    
+    --user_preferences
+     insert into user_preferences (
+     USERNAME,
+        KEYWORD,
+        PREF_VALUE
+    )
+    select t.* from 
+    (
+    select  username  ,'fullName' KEYWORD, username  PREF_VALUE from users
+    union all
+    select  username  ,'emailAddress' KEYWORD, concat(username,'@ghacoa.cn') PREF_VALUE from users
+    union all
+    select  username  ,'replyTo' KEYWORD, '' PREF_VALUE from users
+    union all
+    select  username  ,'mailSound' KEYWORD, 'yes' PREF_VALUE from users
+    union all
+    select  username  ,'spamAnalysis' KEYWORD, '-1' PREF_VALUE from users
+    union all
+    select  username  ,'saveSent' KEYWORD, 'yes'  PREF_VALUE from users
+    union all
+    select  username  ,'signature' KEYWORD, '' PREF_VALUE from users
+    union all
+    select  username  ,'signaturePos' KEYWORD, 'top' PREF_VALUE from users
+    union all
+    select  username  ,'sendReadReceipt' KEYWORD, 'prompt' PREF_VALUE from users
+    
+    
+    )t
+    ;
+    
+
+    
+
