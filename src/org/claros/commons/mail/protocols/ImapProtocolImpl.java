@@ -270,7 +270,7 @@ public class ImapProtocolImpl implements Protocol {
 					header.setSubject(org.claros.commons.utility.Utility.updateTRChars(msg.getSubject()));
                     
 					// now set the human readables.
-					header.setDateShown(Formatter.formatDate(header.getDate(), "dd.MM.yyyy HH:mm"));
+					header.setDateShown(Formatter.formatDate(header.getDate(), "yyyy-MM-dd HH:mm:ss"));
 					header.setFromShown(org.claros.commons.utility.Utility.updateTRChars(Utility.addressArrToStringShort(header.getFrom())));
 					header.setToShown(Utility.addressArrToStringShort(header.getTo()));
 					header.setCcShown(Utility.addressArrToStringShort(header.getCc()));

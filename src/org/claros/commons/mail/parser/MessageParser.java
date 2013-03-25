@@ -52,7 +52,7 @@ public class MessageParser {
            	header.setUnread(!pop3Msg.isSet(javax.mail.Flags.Flag.SEEN));
 
 			// now set the human readables.
-			header.setDateShown(Formatter.formatDate(header.getDate(), "dd.MM.yyyy HH:mm"));
+			header.setDateShown(Formatter.formatDate(header.getDate(), "yyyy-MM-dd HH:mm:ss"));
 			header.setFromShown(Utility.addressArrToString(header.getFrom()));
 			header.setToShown(Utility.addressArrToString(header.getTo()));
 			header.setCcShown(Utility.addressArrToString(header.getCc()));

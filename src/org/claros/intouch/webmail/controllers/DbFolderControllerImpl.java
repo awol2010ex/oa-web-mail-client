@@ -381,7 +381,7 @@ public class DbFolderControllerImpl implements FolderController {
 						header.setUnread(Boolean.valueOf(false));
 
 						// now set the human readables.
-						header.setDateShown(Formatter.formatDate(header.getDate(), "dd.MM.yyyy HH:mm"));
+						header.setDateShown(Formatter.formatDate(header.getDate(), "yyyy-MM-dd HH:mm:ss"));
 						header.setFromShown(org.claros.commons.utility.Utility.updateTRChars(org.claros.commons.mail.utility.Utility.addressArrToString(header.getFrom())));
 						header.setToShown(org.claros.commons.mail.utility.Utility.addressArrToString(header.getTo()));
 						header.setCcShown(org.claros.commons.mail.utility.Utility.addressArrToString(header.getCc()));
@@ -427,7 +427,7 @@ public class DbFolderControllerImpl implements FolderController {
 						header.setUnread(item.getUnread());
 	                
 						// now set the human readables.
-						header.setDateShown(Formatter.formatDate(header.getDate(), "dd.MM.yyyy HH:mm"));
+						header.setDateShown(Formatter.formatDate(header.getDate(), "yyyy-MM-dd HH:mm:ss"));
 						header.setFromShown(org.claros.commons.utility.Utility.updateTRChars(org.claros.commons.mail.utility.Utility.addressArrToString(header.getFrom())));
 						header.setToShown(org.claros.commons.mail.utility.Utility.addressArrToString(header.getTo()));
 						header.setCcShown(org.claros.commons.mail.utility.Utility.addressArrToString(header.getCc()));

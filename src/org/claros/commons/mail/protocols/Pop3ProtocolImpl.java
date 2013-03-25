@@ -166,7 +166,7 @@ public class Pop3ProtocolImpl implements Protocol {
 					header.setSubject(msg.getSubject());
                     
 					// now set the human readables.
-					header.setDateShown(Formatter.formatDate(header.getDate(), "dd.MM.yyyy HH:mm"));
+					header.setDateShown(Formatter.formatDate(header.getDate(), "yyyy-MM-dd HH:mm:ss"));
 					header.setFromShown(Utility.addressArrToString(header.getFrom()));
 					header.setToShown(Utility.addressArrToString(header.getTo()));
 					header.setCcShown(Utility.addressArrToString(header.getCc()));
