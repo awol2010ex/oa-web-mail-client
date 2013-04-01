@@ -172,9 +172,23 @@ function fixLayout() {
 			main.style.height = mainHeight + "px";
 		}
 		windowheight = mainHeight + 82;
+		
+		
+		//IE6-8页面兼容问题
+		try {
+		  var browser=navigator.appName 
+		  var b_version=navigator.appVersion 
+		  var version=b_version.split(";"); 
+		  var trim_Version=version[1].replace(/[ ]/g,""); 
+		  if ('MSIE6.0'==trim_Version || 'MSIE7.0'==trim_Version || 'MSIE8.0'==trim_Version) {
+		    document.body.style.height=(mainHeight+143)+"px";
+		    document.getElementById("inboxholder").style.marginLeft='0';
+		  }
+		}catch (e) {}
 	}
 
 	document.body.style.overflow = "hidden";
+	
 	
 	// WYSIWYG Width and Height
 	

@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!-- INBOX STARTS -->
-<div id="inbox">
-	<div class="inboxholder">
+<div id="inbox"  style='height:100%'>
+	<div class="inboxholder"  id='inboxholder'>
 		<div class="inner">
 			<ul id="tools">
 				<li id="refreshMail"><a href="javascript:refreshMail();"><span><img alt="" src="images/refresh-icon.gif" id="refreshMailImg"/></span><i18n:message key="refresh"/></a></li>
