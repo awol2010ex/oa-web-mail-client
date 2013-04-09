@@ -1,4 +1,17 @@
-CREATE TABLE users_static ( username VARCHAR(32) NOT NULL, totalcapacity BIGINT NOT NULL, PRIMARY KEY (username) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE USERS_STATIC(
+ USERNAME VARCHAR(32) NOT NULL,
+    TOTALCAPACITY BIGINT 
+) ;
+ 
+ ALTER TABLE USERS_STATIC
+  ADD PRIMARY KEY
+   (USERNAME
+   );
+
+
+
+
 delete from users_static;
 
 insert into users_static (totalcapacity ,username)

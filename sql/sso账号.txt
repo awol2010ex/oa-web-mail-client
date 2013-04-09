@@ -71,6 +71,3 @@ insert   into  users (username,
     )t
     ;
     
-
-    
-

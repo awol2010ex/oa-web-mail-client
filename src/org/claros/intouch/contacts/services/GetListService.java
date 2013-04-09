@@ -16,7 +16,7 @@ import org.claros.intouch.common.utility.Constants;
 import org.claros.intouch.contacts.controllers.ContactsController;
 import org.claros.intouch.contacts.controllers.GroupsController;
 import org.claros.intouch.contacts.models.Contact;
-import org.claros.intouch.contacts.models.ContactGroup;
+import org.claros.intouch.contacts.models.DbContactGroup;
 import org.claros.intouch.contacts.utility.Utility;
 import org.claros.intouch.preferences.controllers.UserPrefsController;
 
@@ -107,9 +107,9 @@ public class GetListService extends BaseService {
 			}
 			
 			if (groups != null) {
-				ContactGroup tmp = null;
+				DbContactGroup tmp = null;
 				for (int i=0;i<groups.size();i++) {
-					tmp = (ContactGroup)groups.get(i);
+					tmp = (DbContactGroup)groups.get(i);
 
 					out.print("<tr onclick='showGroupDetails(" + tmp.getId() + ")'>" + 
 							"<td><img src='images/contact-group-mini.png'></td>" + 

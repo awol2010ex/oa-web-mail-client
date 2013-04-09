@@ -3,7 +3,7 @@ package org.claros.intouch.contacts.models;
 /**
  * @author Umut Gokbayrak
  */
-public class ContactGroup {
+public class DbContactGroup {
 	private Long id;
 	private String username;
 	private String shortName;

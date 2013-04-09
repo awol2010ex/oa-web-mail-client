@@ -1,0 +1,203 @@
+--users_temp
+SELECT DISTINCT
+    p.positionid username ,
+    T.USER_PSWD  pwdHash,
+    u.unitname || p.positionname alias
+FROM
+    intf_saleoa.wf_duty d ,
+    intf_saleoa.wf_staff s ,
+    intf_saleoa.wf_unit u ,
+    intf_saleoa.wf_position p ,
+    intf_saleoa.ip_arc_user_auth iaua ,
+    casb.VW_CAS_USERS_DB_BASE_T T
+WHERE
+    d.remark='1'
+AND s.staffid=d.staffid
+AND s.delflag='n'
+AND s.status='1'
+AND p.positionid= d.positionid
+AND iaua.staff_id=s.staffid
+AND s.ownerunitid ||'.'||iaua.login_id =t.login_id
+AND s.ownerunitid  =u.unitid
+AND p.roleid IN ('CEO_ZJL',
+                 'SAL_JL',
+                 'SUP_JL',
+                 'MKT_JL',
+                 'CSV_JL',
+                 'JUC_JL',
+                 'FIN_JL',
+                 'PRT_JL',
+                 'MGT_JL')
+                 
+                 
+--users
+
+insert   into  users (username,
+    pwdHash,
+    pwdAlgorithm,
+    useForwarding,
+    useAlias)
+    
+    select     lower(  replace(username,'_',''))   ,max(pwdHash)  ,'MD5' ,0 ,0   from users_temp group by username ,alias;
+    
+    
+    --user_preferences
+     insert into user_preferences (
+     USERNAME,
+        KEYWORD,
+        PREF_VALUE
+    )
+    select t.* from 
+    (
+    select  username  ,'fullName' KEYWORD, username  PREF_VALUE from users
+    union all
+    select  username  ,'emailAddress' KEYWORD, (username||'@dealer.ghac.cn') PREF_VALUE from users
+    union all
+    select  username  ,'replyTo' KEYWORD, '' PREF_VALUE from users
+    union all
+    select  username  ,'mailSound' KEYWORD, 'yes' PREF_VALUE from users
+    union all
+    select  username  ,'spamAnalysis' KEYWORD, '-1' PREF_VALUE from users
+    union all
+    select  username  ,'saveSent' KEYWORD, 'yes'  PREF_VALUE from users
+    union all
+    select  username  ,'signature' KEYWORD, '' PREF_VALUE from users
+    union all
+    select  username  ,'signaturePos' KEYWORD, 'top' PREF_VALUE from users
+    union all
+    select  username  ,'sendReadReceipt' KEYWORD, 'prompt' PREF_VALUE from users
+    
+    
+    )t
+    ;
+    
+
+    
+
+-- Start of generated script for 10.251.68.109-inst4-OATEST (oa)
+--  Apr-09-2013 at 13:05:48
+
+DROP TABLE OA.SPOOL;
+
+#SYNC 10;
+
+CREATE TABLE OA.SPOOL
+ ("MESSAGE_NAME"        VARCHAR(200)    NOT NULL,
+  "REPOSITORY_NAME"     VARCHAR(255)    NOT NULL,
+  "MESSAGE_STATE"       VARCHAR(30)     NOT NULL,
+  "ERROR_MESSAGE"       VARCHAR(200),
+  "SENDER"              VARCHAR(255),
+  "RECIPIENTS"          VARCHAR(1000)   NOT NULL,
+  "REMOTE_HOST"         VARCHAR(100)    NOT NULL,
+  "REMOTE_ADDR"         VARCHAR(20)     NOT NULL,
+  "MESSAGE_BODY"        BLOB(30 M)      NOT NULL  ,
+  "MESSAGE_ATTRIBUTES"  BLOB(30 M)              ,
+  "LAST_UPDATED"        TIMESTAMP       NOT NULL
+ )
+  DATA CAPTURE NONE
+ IN "USERSPACE1";
+
+#SYNC 20;
+
+ALTER TABLE OA.SPOOL
+  LOCKSIZE ROW
+  APPEND OFF
+  NOT VOLATILE
+  LOG INDEX BUILD NULL;
+
+#SYNC 30;
+
+ALTER TABLE OA.SPOOL
+  ADD CONSTRAINT "SQL130409101203490" PRIMARY KEY
+   ("REPOSITORY_NAME",
+    "MESSAGE_NAME"
+   );
+
+#SYNC 40;
+
+RUNSTATS ON TABLE OA.SPOOL
+  AND INDEXES ALL 
+  SHRLEVEL REFERENCE;
+
+#SYNC 50;
+
+
+
+-- End of generated script for 10.251.68.109-inst4-OATEST (oa)
+
+
+
+    --邮箱大小修改
+
+-- Start of generated script for 10.251.68.109-inst4-OATEST (oa)
+--  Apr-09-2013 at 12:08:40
+
+#QSCOMMAND EXPORT TO '%DATA_PATH%\OATEST.OA.INBOX.6.1\INBOX.ixf'
+  OF IXF
+  LOBS TO '%DATA_PATH%\OATEST.OA.INBOX.6.1\'
+  LOBFILE L1
+  MODIFIED BY LOBSINFILE
+  SELECT * FROM OA.INBOX;
+
+#SYNC 10;
+
+DROP TABLE OA.INBOX;
+
+#SYNC 20;
+
+CREATE TABLE OA.INBOX
+ ("MESSAGE_NAME"        VARCHAR(200)    NOT NULL,
+  "REPOSITORY_NAME"     VARCHAR(255)    NOT NULL,
+  "MESSAGE_STATE"       VARCHAR(30)     NOT NULL,
+  "ERROR_MESSAGE"       VARCHAR(200),
+  "SENDER"              VARCHAR(255),
+  "RECIPIENTS"          VARCHAR(1000)   NOT NULL,
+  "REMOTE_HOST"         VARCHAR(100)    NOT NULL,
+  "REMOTE_ADDR"         VARCHAR(20)     NOT NULL,
+  "MESSAGE_BODY"        BLOB(30 M)      NOT NULL  ,
+  "MESSAGE_ATTRIBUTES"  BLOB(30 M)                ,
+  "LAST_UPDATED"        TIMESTAMP       NOT NULL
+ )
+  DATA CAPTURE NONE
+ IN "USERSPACE1";
+
+#SYNC 30;
+
+ALTER TABLE OA.INBOX
+  LOCKSIZE ROW
+  APPEND OFF
+  NOT VOLATILE
+  LOG INDEX BUILD NULL;
+
+#SYNC 40;
+
+#QSCOMMAND IMPORT FROM '%DATA_PATH%\OATEST.OA.INBOX.6.1\INBOX.ixf'
+  OF IXF
+  LOBS FROM '%DATA_PATH%\OATEST.OA.INBOX.6.1\'
+  MODIFIED BY LOBSINFILE
+              COMPOUND=5
+              NOCHECKLENGTHS
+  COMMITCOUNT 1000
+--RESTARTCOUNT xxx
+  INSERT
+  INTO OA.INBOX;
+
+#SYNC 50;
+
+ALTER TABLE OA.INBOX
+  ADD CONSTRAINT "SQL130409101205190" PRIMARY KEY
+   ("REPOSITORY_NAME",
+    "MESSAGE_NAME"
+   );
+
+#SYNC 60;
+
+RUNSTATS ON TABLE OA.INBOX
+  AND INDEXES ALL 
+  SHRLEVEL REFERENCE;
+
+#SYNC 70;
+
+
+
+-- End of generated script for 10.251.68.109-inst4-OATEST (oa)
