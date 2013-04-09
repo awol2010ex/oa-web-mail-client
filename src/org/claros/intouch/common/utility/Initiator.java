@@ -23,6 +23,10 @@ public class Initiator extends HttpServlet {
 		
 		// delete all files in the tempDir
 		File dir = new File(Constants.tmpDir);
+		if(!dir.exists()){
+			dir.mkdirs();
+		}
+		
 		if (dir.exists() && dir.isDirectory()) {
 			String files[] = dir.list();
 			for (int i=0; i<files.length; i++) {
