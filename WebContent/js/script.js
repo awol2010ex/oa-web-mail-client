@@ -180,7 +180,7 @@ function fixLayout() {
 		  var b_version=navigator.appVersion 
 		  var version=b_version.split(";"); 
 		  var trim_Version=version[1].replace(/[ ]/g,""); 
-		  if ('MSIE6.0'==trim_Version || 'MSIE7.0'==trim_Version || 'MSIE8.0'==trim_Version) {
+		  if ('MSIE6.0'==trim_Version || 'MSIE7.0'==trim_Version ) {
 		    document.body.style.height=(mainHeight+143)+"px";
 		    document.getElementById("inboxholder").style.marginLeft='0';
 		  }
