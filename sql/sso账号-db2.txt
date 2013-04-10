@@ -42,6 +42,7 @@ insert   into  users (username,
     
     
     --user_preferences
+    delete from user_preferences;
      insert into user_preferences (
      USERNAME,
         KEYWORD,
@@ -49,7 +50,7 @@ insert   into  users (username,
     )
     select t.* from 
     (
-    select  username  ,'fullName' KEYWORD, username  PREF_VALUE from users
+    select  distinct lower(  replace(username,'_',''))   ,'fullName' KEYWORD, alias  PREF_VALUE from users_temp
     union all
     select  username  ,'emailAddress' KEYWORD, (username||'@dealer.ghac.cn') PREF_VALUE from users
     union all

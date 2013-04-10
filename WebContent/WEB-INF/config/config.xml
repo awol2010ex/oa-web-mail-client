@@ -68,13 +68,12 @@
 			<!-- do not change the term file!!! -->
 			<id>file</id>
 			<!-- the connection url for the JDBC connection -->
-			<database>jdbc:db2://10.251.68.109:50000/OATEST</database>
+			<database>jdbc:db2://10.251.68.122:50000/JAMES</database>
 			<!-- the connection class -->
 			<driver>com.ibm.db2.jcc.DB2Driver</driver>
 			<!-- the user with read/write/delete/update/select permission to the database  -->
-			<login>oa</login>
+			<login>db2inst1</login>
 			<!-- the plain text password -->
-			<password>oa</password>
-		</db>
+			<password>Abcd1234</password>		</db>
 	</db-config>
 </claros-config>
